@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para remover sublinhado dos links */
+.search-results a {
+    text-decoration: none;
+}
+
+/* Estilo para alterar a cor do link quando clicado */
+.search-results a:visited {
+    color: rgb(0, 0, 0) !important; /* Altere para a cor desejada */
+}
+
+/* Estilo para remover os marcadores de lista */
+.search-results li {
+    list-style-type: none;
+}
+
+/* Estilo para a fonte e cor */
+.search-results {
+    font-family: Georgia, serif; /* Altere a fonte conforme necessário */
+    color: yellow !important; /* Altere para a cor desejada */
+}
+
+
+
+/* Estilos CSS personalizados carrinho de compras */
+
+.cart-link {
+    position: fixed; /* Torna o botão fixo na página */
+    top: 20px; /* Define a distância do topo da página */
+    right: 20px; /* Define a distância da margem direita */
+    z-index: 999; /* Define a ordem de empilhamento do botão */
+}
+
+#carrinho {
+    position: relative; /* Permite o posicionamento absoluto do ícone */
+    background-color: #0b4b0e; /* Cor de fundo do botão */
+    color: #ffff00; /* Cor do texto */
+    font-family: 'Roboto', sans-serif; /* Fonte do Google Fonts */
+    border: none; /* Remove a borda */
+    padding: 10px 20px 10px 40px; /* Define o espaçamento interno do botão */
+    border-radius: 4px; /* Borda arredondada */
+    cursor: pointer; /* Altera o cursor ao passar sobre o botão */
+}
+
+#carrinho:hover {
+    background-color: #0a3e0b; /* Altera a cor de fundo ao passar o mouse */
+}
+
+.cart-image {
+    position: absolute; /* Posicionamento absoluto em relação ao botão */
+    left: 10px; /* Posiciona o ícone no lado esquerdo do botão */
+    top: 50%; /* Alinha o ícone verticalmente */
+    transform: translateY(-50%); /* Ajusta o ícone verticalmente */
+    width: 20px; /* Defina a largura do ícone */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+
+
+
+
+
+
+
+/* Container para envolver a barra de pesquisa e o botão de pesquisa */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px; /* Adicione margem conforme necessário */
+}
+
+/* Formatação do formulário para remover margens padrão */
+.search-container form {
+    display: flex;
+    margin: 0;
+}
+
+/* Estilo da barra de pesquisa */
+.search-container input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 10px 5px; /* Adiciona borda arredondada à esquerda */
+    background-color: #ffffff;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 5px 2px 5px rgba(20, 0, 0, 20); /* Adiciona uma sombra suave */
+    width: 300px; /* Ajuste a largura conforme necessário */
+    color: yellow !important; /* Altere para a cor desejada */
+    background-color: #0b4b0e; /* Altere para a cor verde desejada */
+}
+
+/* Estilo do botão de pesquisa */
+.search-container button {
+    background-color: #0b4b0e;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px 5px; /* Adiciona borda arredondada à direita */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Georgia, serif;
+    border: 1px solid #333;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+    color: rgb(255, 255, 255) !important; /* Altere para a cor desejada */
+}
+
+.search-container button:hover {
+    color: #db7676;
+}
+/* plano de fundo do site */
+
+body {
+    background-image: url('imagens/fundofrutas.jpg'); /* Substitua 'caminho/para/sua/imagem.jpg' pelo caminho correto da sua imagem */
+    background-size: cover; /* Isso faz com que a imagem cubra todo o fundo */
+    background-position: center; /* Centraliza a imagem no fundo */
+    background-size: 100%; /* ou 'contain', ou 'cover' */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Isso faz com que a imagem de fundo seja fixa */
+}
+
+.container {
+    background-image: url('imagens/fundofrutas.jpg');
+    background-size: 0%; /* ou 'contain', ou 'cover' */
+    background-position: center;
+}
+
+/* fim do plano de fundo do site */
+
+body {
+    background-color: #ffffff; /* Substitua #f0f0f0 pela cor desejada em formato hexadecimal ou nome da cor */
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+    align-items: center;
+    color: #202020;
+}
+.logo img {
+    width: 200px;
+    height: auto;
+    transform: translate(-30px, -100px); /* Ajuste os valores conforme necessário */
+}
+
+
+/* submenus*/
+
+.links {
+    margin: 20px 0; /* Remover a margem vertical e definir apenas a margem superior e inferior */
+}
+
+.nav-itens {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav-itens li {
+    margin-right: 10px; /* Reduzir a margem direita para evitar excesso de espaçamento */
+    position: relative;
+}
+
+.nav-itens a {
+    text-decoration: none;
+    color: #ffffff; /* Altere para a cor desejada do texto (por exemplo, branco) */
+}
+
+
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0b4b0e; /* Altere para branco (#ffffff) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 5px 5px;
+    padding: 60px;
+    color: #ffffff; /* Altere para a cor desejada do texto (por exemplo, branco) */
+    border-radius: 0px 0px 0px 20px; /* Adiciona borda arredondada à esquerda */
+    z-index: 1000; /* Ajuste o valor conforme necessário para garantir que fique acima de outros elementos */
+    box-shadow: 5px 2px 5px rgba(20, 0, 0, 20); /* Adiciona uma sombra suave */
+}
+
+.submenu-parent:hover .submenu {
+    display: block;
+}
+
+
+
+/* codigo do menu */
+
+.nav-itens>li {
+    background-color: #0b4b0e; /* Adicione esta linha para o fundo preto */
+    border-radius: 0px 0px; /* Adiciona borda arredondada à esquerda */
+    padding: 10px;
+    margin-right: 1px; /* Adicione margem direita para criar espaço entre os itens */
+    box-shadow: 10px 2px 10px rgba(10, 0, 0, 10); /* Adiciona uma sombra suave */
+    
+}
+
+.nav-itens>li ul {
+    padding: 2px; /* Adicione um preenchimento interno ao submenu */
+    max-height: 150px; /* Defina uma altura máxima para o submenu */
+    overflow-y: auto; /* Adicione uma barra de rolagem vertical se necessário */
+    width: 188px; /* Aumente a largura do submenu */
+    text-align: center; /* Centralize o texto dentro do submenu */
+}
+
+
+.nav-itens>li:last-child {
+    margin-right: 0; /* Remove a margem direita do último item para evitar excesso de espaço */
+    
+}
+
+.nav-itens>li>a {
+    padding: 15px 20px; /* Ajuste o espaçamento conforme necessário */
+    color: #fff; /* Cor do texto */
+    text-decoration: none;
+    
+}
+
+
+.login {
+    
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #0b4b0e;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    text-decoration: none; /* Remove o sublinhado do texto do menu */
+    background-color: #0b4b0e; /* Adicione esta linha para o fundo preto */
+    border-radius: 0px 0px; /* Adiciona borda arredondada à esquerda */
+    padding: 10px;
+    margin-right: 1px; /* Adicione margem direita para criar espaço entre os itens */
+    box-shadow: 10px 2px 10px rgba(10, 0, 0, 10); /* Adiciona uma sombra suave */
+    padding-left: 30px; /* Aumenta o padding à esquerda da barra */
+    padding-right: 30px; /* Aumenta o padding à direita da barra */
+}
+
+.cadastro {
+   
+    border-radius: 5px;
+    color: #fff;
+    background-color: #0b4b0e;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: 1s background;
+    text-decoration: none; /* Remove o sublinhado do texto do menu */
+    background-color: #0b4b0e; /* Adicione esta linha para o fundo preto */
+    border-radius: 0px 0px; /* Adiciona borda arredondada à esquerda */
+    padding: 10px;
+    margin-right: 1px; /* Adicione margem direita para criar espaço entre os itens */
+    box-shadow: 10px 2px 10px rgba(10, 0, 0, 10); /* Adiciona uma sombra suave */
+    padding-left: 30px; /* Aumenta o padding à esquerda da barra */
+    padding-right: 30px; /* Aumenta o padding à direita da barra */
+}
+
+
+.cadastro:hover {
+    background-color: #3d3d3d;
+    transition: 1s background;
+}
+
+
+#frutas h2 {
+    text-align: center; /* Centraliza o texto */
+    color: #0b4b0e; /* Altera a cor do texto */
+    font-size: 24px; /* Ajusta o tamanho do texto */
+    font-family: Georgia, serif; /* Define o tipo de letra */
+}
+
+
+/* inicio do codigo dos slides */
+
+.slider {
+    margin: 0 auto;
+    width:800px;
+    height:400px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 800%;
+    height: 400px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 25%;
+    position: relative;
+}
+
+.slide img {
+    width: 1000px; /* Define a largura da imagem como 550 pixels */
+    height: 320px; /* Define a altura da imagem como 300 pixels */
+}
+
+
+.manual-navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: 400px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.manual-btn{
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    position: relative; /* Define o posicionamento relativo */
+    top: -517px; /* Move para cima */
+    left: 295px; /* Move para a esquerda */
+   
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background-color: #fff;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0%;
+
+}
+
+#radio2:checked ~ .first{
+    margin-left: -25%;
+
+}
+
+#radio3:checked ~ .first{
+    margin-left: -50%;
+
+}
+
+#radio4:checked ~ .first{
+    margin-left: -75%;
+
+}
+
+#radio5:checked ~ .first{
+    margin-left: -100%;
+
+}
+
+.navigation-auto div {
+    border: 2px solid #20a6ff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    position: relative; /* Define o posicionamento relativo */
+    top: -160px; /* Move para cima */
+    left: 20px; /* Move para a direita */
+}
+
+
+.navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 443px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: #fff;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: #fff;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: #fff;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: #fff;
+}
+
+#radio5:checked ~ .navigation-auto .auto-btn5{
+    background-color: #fff;
+}
+
+/* fim do codigo dos slides */
+
+
+
+/* rede sociais */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.social-strip {
+    background-color: #2a2c2a;
+    padding: 10px 0;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    position: fixed; /* Define a posição fixa */
+    bottom: 0; /* Alinha a barra no final da janela do navegador */
+    left: 0; /* Alinha a barra à esquerda */
+    width: 100%; /* Define a largura como 100% da largura da tela */
+    z-index: 9999; /* Garante que a barra fique acima de outros elementos */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.social-strip.hidden {
+    transform: translateY(100%); /* Esconde a barra movendo-a para baixo */
+}
+
+
+.social-icon {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none; /* Remova o sublinhado do link */
+    color: #fff; /* Cor branca para o texto */
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px; /* Espaço entre a imagem e o texto */
+}
+
+.social-icon span {
+    font-size: 0.8em; /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+
+
+
+/* tabela do carrinho  */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th,
+  table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  thead {
+    background-color: #f9f9f9;
+  }
+  
+  tbody tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  #total-carrinho {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  #formas-pagamento {
+    margin-top: 40px;
+  }
+  
+  #formas-pagamento h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  button#finalizar {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  button#finalizar:hover {
+    background-color: #0056b3;
+  }
+
+
+
+
